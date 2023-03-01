@@ -1,30 +1,17 @@
 package com.resftful.webservices.student;
 
+import com.resftful.webservices.repository.StudentRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class StudentService {
-    public List<Student>  getStudents(){
 
-        List<Student>  students = new ArrayList<>();
-        Student s = new Student();
-        s.setStudentId(1);
-        s.setStudentName("Mani");
-        s.setStudentMarks(99);
-        s.setStudentAdress("TPT");
-
-        Student s1 = new Student();
-        s1.setStudentId(2);
-        s1.setStudentName("Haritha");
-        s1.setStudentMarks(100);
-        s1.setStudentAdress("TIRUPATHI");
-
-        students.add(s);
-        students.add(s1);
-        return students;
-
-
+    private StudentRepository studentRepository;
+    public List<com.resftful.webservices.entity.Student>  getStudents(){
+        return studentRepository.findAll();
     }
 }

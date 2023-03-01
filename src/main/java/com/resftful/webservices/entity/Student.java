@@ -22,4 +22,7 @@ public  class Student {
         @Column(name = "STUDENT_MARKS")
         private int marks;
 
+        @Column(name="STUDENT_DEPT")
+        private  String studentDepartment;
+
 }
