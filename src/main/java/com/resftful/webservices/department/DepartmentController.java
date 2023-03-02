@@ -11,6 +11,7 @@ import java.util.List;
 
 
 @Controller
+
 @AllArgsConstructor
 public class DepartmentController {
 
@@ -18,10 +19,8 @@ public class DepartmentController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/departments")
     @ResponseBody
-
     public List<Department> getDepartments(){
         return departmentService.getDepartments();
-
     }
 
 
